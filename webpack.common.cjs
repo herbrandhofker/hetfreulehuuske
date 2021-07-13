@@ -49,8 +49,7 @@ module.exports = {
             template: './src/index.html'
         }),
         new MiniCssExtractPlugin({
-            filename: 'css/mystyles.css'
-          }),
+            }),
           new CopyPlugin({
             patterns: [
               { from: './src/assets/carousel',to: './images'},
