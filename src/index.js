@@ -1,5 +1,4 @@
 require('./mystyles.scss');
-
 import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min.js';
 
 const el = document.getElementById("carousel");
