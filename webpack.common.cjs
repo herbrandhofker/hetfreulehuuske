@@ -26,13 +26,7 @@ module.exports = {
                     }
                 ]
             },
-            {
-                test: /\.html$/,
-                use: [
-                    "html-loader"
-                ]
-            },
-      
+           
             {
                 test: /\.(svg|jpg|jpeg|png|gif|jfif)$/,
                 use: {
