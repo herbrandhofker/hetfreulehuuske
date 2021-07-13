@@ -32,7 +32,7 @@ module.exports = {
                     "html-loader"
                 ]
             },
-      
+
             {
                 test: /\.(svg|jpg|jpeg|png|gif|jfif)$/,
                 use: {
@@ -49,10 +49,10 @@ module.exports = {
             template: './src/index.html'
         }),
         new MiniCssExtractPlugin({
-            }),
-          new CopyPlugin({
+        }),
+        new CopyPlugin({
             patterns: [
-              { from: './src/assets/carousel',to: './images'},
-             ],
-          })]
+                { from: './src/assets/carousel', to: './images' },
+            ],
+        })]
 }
