@@ -1,0 +1,42 @@
+/*@charset "utf-8";
+@import "~bulma/bulma";
+@import "~bulma-carousel";
+*/
+table {
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  padding: 15px;
+}
+
+body {
+  background-color: lightgrey;
+}
+
+.card-header-title {
+  background-color: #8bb381;
+  height: 5em;
+}
+
+.card-content {
+  height: 18em;
+}
+
+.card-footer {
+  text-align: center;
+}
+
+.background {
+  background-image: url("./assets/carousel/03.jpg");
+  background-size: cover;
+  background-blend-mode: soft-light;
+}
+
+#carousel {
+  background-color: #8bb381;
+}

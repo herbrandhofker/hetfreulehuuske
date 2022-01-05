@@ -1,180 +1,110 @@
-:root {
-  --main-bg-color: #caa009;
-  --bg-color: #f3edd1;
-  --contrast-bg-color:#870d4d;
-}
-
 * {
-  font-family: 'Ping Regular', sans-serif;
+  box-sizing: border-box
 }
 
-.main-title {
-  font-weight: bold;
-  font-size: 1.1em;
-  line-height: 3;
-  color: #FFFFFF;
-  background-color:var(--contrast-bg-color);
-  text-transform: uppercase;
-  letter-spacing: 1.67px;
+body {
+  font-family: Verdana, sans-serif;  
+  margin: 0;
+  background-color: lightgrey;
+  padding: 0.5vw;
+}
+
+
+.heading {
+  height: 1000px;
+  background: url('./images/00.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.heading .centered {
+  color: #fff;
+  font-size: 2.5vw;
   text-align: center;
-}
-
-.header {
-  background-color: var(--main-bg-color);
-  display: flex;
-  margin: 10px;
-  padding: 10px;
-}
-
-.header div {
-  margin: 5px;
-}
-
-.header .menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: var(--bg-color);
-  font-size: 0.8em;
   text-transform: uppercase;
-  font-weight: 600;
-  line-height: 2.5em;
-  padding: 10px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.header .menu-item {
-  color: black;
+.content {
+  margin: 3vw;
 }
 
-.header figure {
-  border: thin #c0c0c0 solid;
+
+.title {
+  margin: 0;
+}
+
+.subtitle {
+  margin:0;
+}
+
+.card-container{
   display: flex;
-  flex-flow: column;
-  padding: 5px;
-  max-width: 220px;
-  margin: auto;
-  background-color: #f3edd1;
 }
 
-.schilders-container {
-  display: flex;
-  flex-wrap: wrap;
-  background-color: var(--main-bg-color);
-  margin: 10px;
-}
-
-.schilders-container .schilders-button{
-  background-color: var(--bg-color);
-  width: 180px;
-  height: 8em;
-  margin: 1em;
-  padding-top: 5px;
-  font-size: 0.8em;
-  text-transform: uppercase;
-  font-weight: 600;
-  line-height: 2.5em;
-  text-align: center;
-}
-
-.schilders-container .schilders-button:hover{
-  background-color: var(--contrast-bg-color);
-  color: white;
-}
-
-
-.schilder .title {
-  font-weight: bold;
-  font-size: 1.1em;
-  line-height: 3;
-  color: #FFFFFF;
-  background-color: var(--contrast-bg-color);
- text-transform: uppercase;
-  letter-spacing: 1.67px;
-  text-align: center;
-}
-.schilder{
-  background-color: var(--bg-color);
-}
-
-th, td {
-  padding: 15px;
-  text-align: left;
-  border-width : 2px;
-  border-color : black;
+.card{
+ width: 400px;
+ margin: 1vw;
 
 }
 
-
-th {
-  color: #FFFFFF;
-  background-color: var(--main-bg-color);
-  -webkit-font-smoothing: subpixel-antialiased
-}
-
-table {
-  margin: 1em;
-  border: 3px solid grey;
-}
-td , th{
-  font-size: 24px;
-  border: 1px solid grey;
+.card .picture{
+  width : 400px;
+  height : 500px;
 }
 /*
-.menu_schilders {
-  background-color: red;
-  font-size: 0.8em;
+.heading img{
+  width: 100%;
+  height:auto;
+  opacity: 40%;
+}
+
+
+ 
+ .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.main-title {
+  font-size: 1.5em;
+  line-height: 3;
+  color: black;
   text-transform: uppercase;
-  font-weight: 600;
-  line-height: 2.5em;
-  list-style: none;
-}
-
-
-
-.schilders {
-  border: 1px solid grey;
-  margin: 10px;
-}
-
-
-
-
-img {
-  max-width: 220px;
-  max-height: 150px;
-}
-
-figcaption {
-  background-color: #222;
-  color: #fff;
-  font: italic smaller sans-serif;
-  padding: 3px;
+  letter-spacing: 1.67px;
   text-align: center;
 }
 
-th, td {
-  padding: 15px;
-  text-align: left;
+.sub-title {
+  font-size: 2em;
+  line-height: 3;
+  color:black;
+  text-transform: uppercase;
+  letter-spacing: 1.67px;
+  text-align: center;
 }
 
-tr:hover {
-  background-color: yellow;
+.purpose{
+  width: 100%;
+  height: 400px;
+  margin: 2em;
 }
 
-tr:nth-child(even) {
-  background-color: #f2f2f2;
+.purpose .title{  
+  font-weight: bold;
 }
 
-th {
-  background-color: #04AA6D;
-  color: white;
+.paragraph{
+  
+  font-size: 1.1em;
+  line-height: 1.5;
 }
-
-th {
-  color: #FFFFFF;
-  background-color: #caa009;
-  -webkit-font-smoothing: subpixel-antialiased
-}
-
-
 */

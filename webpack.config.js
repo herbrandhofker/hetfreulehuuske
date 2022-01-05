@@ -12,7 +12,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-     title: 'Het Freule Huuske',
+     template: './src/index.html',
+     favicon : './src/favicon.png'
     }),
     new CopyPlugin({
       patterns: [
