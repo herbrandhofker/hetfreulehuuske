@@ -1,6 +1,5 @@
 //import _, { divide } from 'lodash';
 import './index.css';
-//import './tabmenu.css';
 import json from './data/freulehuuske.json';
 //import epub from './epub.js'
 
@@ -18,30 +17,59 @@ function mainTitle(parent) {
   subtitle.innerText = json.subtitle
 }
 
-function purpose(parent) {
-  for (let i = 0; i < json.purpose.length; i++) {
-    const item = json.purpose[i];
-    const title = parent.appendChild(document.createElement('h1'));
-    title.classList.add("title")
-    title.innerText = item.title
-    const subtitle = parent.appendChild(document.createElement('p'));
-    subtitle.classList.add("subtitle")
-    subtitle.innerHTML = item.subtitle;
-    const cardContainer = parent.appendChild(document.createElement('div'));
-    cardContainer.classList.add('card-container')
+function test(parent){
+  for (let i = 0; i < json.sections.length; i++) {
+    const item = json.sections[i];
+    const section = parent.appendChild(document.createElement('section'));
+    section.classList.add("section")
+    section.innerText="section"
+    const columns = parent.appendChild(document.createElement('div'));
+    columns.classList.add('columns')
 
     for (let j = 0; j < item.cards.length; j++) {
       const object = item.cards[j];
-      const card = cardContainer.appendChild(document.createElement('div'));
-      card.classList.add('card')
-      card.innerHTML = "<h2>" + object.title + "</h2>"
+      const column = columns.appendChild(document.createElement('div'));
+      column.classList.add('column')
+      column.innerText="column"
+    //  const card = column.appendChild(document.createElement('div'));
+    //  column.classList.add('card')
+    }
+  }
+}
+
+function section(parent) {
+  for (let i = 0; i < json.sections.length; i++) {
+    const item = json.sections[i];
+    const section = parent.appendChild(document.createElement('section'));
+    section.classList.add("section")
+    const container = section.appendChild(document.createElement('div'));
+    container.classList.add("container")
+    const title = container.appendChild(document.createElement('h1'));
+    title.classList.add("title")
+    title.innerText = item.title
+    const subtitle = container.appendChild(document.createElement('h2'));
+    subtitle.classList.add("subtitle")
+    subtitle.innerHTML = item.subtitle;
+    const columns = container.appendChild(document.createElement('div'));
+    columns.classList.add('columns')
+
+    for (let j = 0; j < item.cards.length; j++) {
+      const object = item.cards[j];
+      const column = columns.appendChild(document.createElement('div'));
+      column.classList.add('column')
+      const card = column.appendChild(document.createElement('div'));
+      column.classList.add('card')
+      const card_title = card.appendChild(document.createElement('h1'));
+      card_title.classList.add('card-header')
+      card_title.innerText = object.title
       if (object.picture) {
         const img = card.appendChild(document.createElement('img'));
-        img.classList.add('picture')
-      img.src = "./images/" + object.picture
-       }
-      const desc = card.appendChild(document.createElement('div'));
-      desc.innerHTML = "<p>" + object.description + "</p>"
+        img.classList.add('card-image')
+        img.src = "./images/" + object.picture
+      }
+      const cardDescription = card.appendChild(document.createElement('div'));
+      cardDescription.classList.add('card-content')
+      cardDescription.innerHTML = "<p>" + object.description + "</p>"
 
     }
   }
@@ -53,10 +81,11 @@ site(div);
 
 
 function site(div) {
-  mainTitle(div)
+  test(div)
+ // mainTitle(div)
   const content = div.appendChild(document.createElement('div'));
   content.classList.add("content")
-  purpose(content)
+ // section(content)
   //  hoofdMenu(div)
   //  tabMenu(div)
 }
