@@ -5,6 +5,9 @@ vw margins padding
 
 *{
   margin : 0.5vw;
+  font-family: 'GothamSSm'; 
+  font-weight: normal;
+  font-style: normal;
 }
 
 html{
@@ -13,16 +16,13 @@ html{
 }
 body{
   background-color: black;
-  font-family: 'GothamSSm'; 
-  font-weight: normal;
-  font-style: normal;
+
   margin : 0;
 }
 .section {
   background-color: lightgray;
   display: flex;
-  flex-direction: column;
-  
+  flex-direction: column; 
   margin-top:0;
   margin-bottom:0;
 }
