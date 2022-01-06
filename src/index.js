@@ -1,7 +1,9 @@
 //import _, { divide } from 'lodash';
-import './index.css';
+
 import json from './data/freulehuuske.json';
 //import epub from './epub.js'
+
+import './index.css';
 
 function mainTitle(parent) {
   const heading = parent.appendChild(document.createElement('div'));
@@ -17,22 +19,38 @@ function mainTitle(parent) {
   subtitle.innerText = json.subtitle
 }
 
-function test(parent){
+function test(parent) {
   for (let i = 0; i < json.sections.length; i++) {
     const item = json.sections[i];
     const section = parent.appendChild(document.createElement('section'));
     section.classList.add("section")
-    section.innerText="section"
-    const columns = parent.appendChild(document.createElement('div'));
+    const titles = section.appendChild(document.createElement('div'));
+    titles.classList.add("section-titles")
+    const title = titles.appendChild(document.createElement('div'));
+    title.classList.add("section-title")
+    title.innerText = "section title"
+    const subtitle = titles.appendChild(document.createElement('div'));
+    subtitle.classList.add("section-subtitle")
+    subtitle.innerText = "section subtitle"
+
+    const columns = section.appendChild(document.createElement('div'));
     columns.classList.add('columns')
 
     for (let j = 0; j < item.cards.length; j++) {
       const object = item.cards[j];
-      const column = columns.appendChild(document.createElement('div'));
-      column.classList.add('column')
-      column.innerText="column"
-    //  const card = column.appendChild(document.createElement('div'));
-    //  column.classList.add('card')
+
+      const card = columns.appendChild(document.createElement('div'));
+      card.classList.add('card')
+      const title = card.appendChild(document.createElement('div'));
+      title.classList.add('card-title')
+      title.innerText = "title" + j
+      const img = card.appendChild(document.createElement('div'));
+      img.classList.add('card-image')
+      img.innerText = "imaage" + j
+      const desc = card.appendChild(document.createElement('div'));
+      desc.classList.add('card-description')
+      desc.innerText = "desc" + j
+
     }
   }
 }
@@ -80,12 +98,14 @@ const div = document.body.appendChild(document.createElement('div'));
 site(div);
 
 
+
 function site(div) {
-  test(div)
- // mainTitle(div)
+
+ test(div)
+  // mainTitle(div)
   const content = div.appendChild(document.createElement('div'));
   content.classList.add("content")
- // section(content)
+  // section(content)
   //  hoofdMenu(div)
   //  tabMenu(div)
 }

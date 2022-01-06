@@ -1,4 +1,74 @@
-* {
+*{
+  margin : 10px;
+}
+body{
+  background-color: black;
+  font-family: 'GothamSSm'; 
+  font-weight: normal;
+  font-style: normal;
+}
+.section {
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  
+  margin-top:0;
+  margin-bottom:0;
+}
+
+.section-titles {
+  background-color: darkgrey;
+  display: flex;
+  flex-direction: column;
+  margin-bottom:0;
+}
+
+.section-title{
+  margin-bottom:0;
+  font-size: 1.8vw
+}
+
+.section-subtitle{
+  margin-top:0;
+  font-size: 1.2vw
+}
+
+.columns {  
+  margin-top:0;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: darkgrey;
+}
+
+.card{
+  border-width: 10px;
+  border-color: black;
+  margin: 0;
+  background-color: yellow;
+}
+
+.card-title{  
+  color: black;
+  font-size: 1.2vw;
+  background-color: #8bb381;
+  margin-top:0;  
+  margin-bottom:0;
+}
+
+.card-image{  
+  margin-top:0;  
+  margin-bottom:0;
+  background-color: lightblue;  
+  font-size: 1.2vw;
+}
+.card-description{  
+  margin-top:0;  
+  background-color: white;
+  font-size: 1.2vw;
+}
+
+/*
+ {
   box-sizing: border-box
 }
 
@@ -15,7 +85,6 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
- /* background-blend-mode: soft light;*/
 }
 
 .heading .centered {
@@ -30,7 +99,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
+*/
 
 
 /*
