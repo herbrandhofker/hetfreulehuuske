@@ -3,6 +3,7 @@
 import json from './data/freulehuuske.json';
 //import epub from './epub.js'
 
+import './fonts/stylesheet.css';
 import './index.css';
 
 function mainTitle(parent) {
@@ -46,7 +47,7 @@ function test(parent) {
       title.innerText = "title" + j
       const img = card.appendChild(document.createElement('div'));
       img.classList.add('card-image')
-      img.innerText = "imaage" + j
+      img.innerText = "image" + j
       const desc = card.appendChild(document.createElement('div'));
       desc.classList.add('card-description')
       desc.innerText = "desc" + j
