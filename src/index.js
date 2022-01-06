@@ -20,7 +20,7 @@ function mainTitle(parent) {
   subtitle.innerText = json.subtitle
 }
 
-function test(parent) {
+function testLayout(parent) {
   for (let i = 0; i < json.sections.length; i++) {
     const item = json.sections[i];
     const section = parent.appendChild(document.createElement('section'));
@@ -56,42 +56,114 @@ function test(parent) {
   }
 }
 
-function section(parent) {
+function test(parent) {
   for (let i = 0; i < json.sections.length; i++) {
     const item = json.sections[i];
     const section = parent.appendChild(document.createElement('section'));
     section.classList.add("section")
-    const container = section.appendChild(document.createElement('div'));
-    container.classList.add("container")
-    const title = container.appendChild(document.createElement('h1'));
-    title.classList.add("title")
+    const titles = section.appendChild(document.createElement('div'));
+    titles.classList.add("section-titles")
+    const title = titles.appendChild(document.createElement('div'));
+    title.classList.add("section-title")
     title.innerText = item.title
-    const subtitle = container.appendChild(document.createElement('h2'));
-    subtitle.classList.add("subtitle")
-    subtitle.innerHTML = item.subtitle;
-    const columns = container.appendChild(document.createElement('div'));
+    const subtitle = titles.appendChild(document.createElement('div'));
+    subtitle.classList.add("section-subtitle")
+    subtitle.innerText = item.subtitle
+
+    const columns = section.appendChild(document.createElement('div'));
     columns.classList.add('columns')
 
     for (let j = 0; j < item.cards.length; j++) {
       const object = item.cards[j];
-      const column = columns.appendChild(document.createElement('div'));
-      column.classList.add('column')
-      const card = column.appendChild(document.createElement('div'));
-      column.classList.add('card')
-      const card_title = card.appendChild(document.createElement('h1'));
-      card_title.classList.add('card-header')
-      card_title.innerText = object.title
+
+      const card = columns.appendChild(document.createElement('div'));
+      card.classList.add('card')
+      const title = card.appendChild(document.createElement('div'));
+      title.classList.add('card-title')
+      title.innerText = object.title
       if (object.picture) {
         const img = card.appendChild(document.createElement('img'));
         img.classList.add('card-image')
         img.src = "./images/" + object.picture
       }
-      const cardDescription = card.appendChild(document.createElement('div'));
-      cardDescription.classList.add('card-content')
-      cardDescription.innerHTML = "<p>" + object.description + "</p>"
+      else{
+        const img = card.appendChild(document.createElement('div'));
+        img.classList.add('card-image')       
+        img.style="width:200px;height: 200px;"
+      }
+      const desc = card.appendChild(document.createElement('div'));
+      desc.classList.add('card-description')
+      desc.innerHTML = object.description
 
     }
   }
+}
+
+function section(parent) {
+  for (let i = 0; i < json.sections.length; i++) {
+    const item = json.sections[i];
+    for (let i = 0; i < json.sections.length; i++) {
+      const item = json.sections[i];
+      const section = parent.appendChild(document.createElement('section'));
+      section.classList.add("section")
+      const titles = section.appendChild(document.createElement('div'));
+      titles.classList.add("section-titles")
+      const title = titles.appendChild(document.createElement('div'));
+      title.classList.add("section-title")
+      title.innerText = item.title
+      const subtitle = titles.appendChild(document.createElement('div'));
+      subtitle.classList.add("section-subtitle")
+      subtitle.innerText = item.subtitle
+      const columns = section.appendChild(document.createElement('div'));
+      columns.classList.add('columns')
+
+      for (let j = 0; j < item.cards.length; j++) {
+        const object = item.cards[j];
+        const card = columns.appendChild(document.createElement('div'));
+        card.classList.add('card')
+        const title = card.appendChild(document.createElement('div'));
+        title.classList.add('card-title')
+        title.innerText = object.title;
+        if (object.picture) {
+          const img = card.appendChild(document.createElement('img'));
+          img.classList.add('card-image')
+          img.src = "./images/" + object.picture
+        }
+
+        const desc = card.appendChild(document.createElement('div'));
+        desc.classList.add('card-description')
+        desc.innerHTML = object.description
+
+      }
+    }
+  }
+  /*
+ 
+  
+  const columns = section.appendChild(document.createElement('div'));
+  columns.classList.add('columns')
+
+  for (let j = 0; j < item.cards.length; j++) {
+    const object = item.cards[j];
+    const column = columns.appendChild(document.createElement('div'));
+    column.classList.add('column')
+    const card = column.appendChild(document.createElement('div'));
+    column.classList.add('card')
+    const card_title = card.appendChild(document.createElement('h1'));
+    card_title.classList.add('card-header')
+    card_title.innerText = object.title
+    if (object.picture) {
+      const img = card.appendChild(document.createElement('img'));
+      img.classList.add('card-image')
+      img.src = "./images/" + object.picture
+    }
+    const cardDescription = card.appendChild(document.createElement('div'));
+    cardDescription.classList.add('card-content')
+    cardDescription.innerHTML = "<p>" + object.description + "</p>"
+
+  }
+}*/
+
 }
 
 
@@ -102,11 +174,11 @@ site(div);
 
 function site(div) {
 
- test(div)
+  test(div)
   // mainTitle(div)
   const content = div.appendChild(document.createElement('div'));
   content.classList.add("content")
-  // section(content)
+  //  section(content)
   //  hoofdMenu(div)
   //  tabMenu(div)
 }
