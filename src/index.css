@@ -1,236 +1,165 @@
-/*
-em fonts
-vw margins padding
-*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
 
-*{
-  margin : 0.5vw;
-  font-family: 'GothamSSm'; 
-  font-weight: normal;
-  font-style: normal;
+:root {
+    --main-bg-color: #caa009;
+    --bg-color: #f3edd1;
+    --contrast-bg-color: #870d4d;
+    --width: 400px;
+    font-size: 1vw;
+    font-family: 'Open Sans', sans-serif;
 }
 
-html{
-  margin : 0;
-  padding : 0.5vw;
+.button-container{ margin: .3rem;
+    padding: .3rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    display: flex;
+    justify-content: space-between;
+    background-color:var(--bg-color);
 }
-body{
-  background-color: black;
 
-  margin : 0;
+.button-container>a{
+    font-size:1.5rem;    
+    background-color:var(--contrast-bg-color);
+    color: white;
 }
+
 .section {
-  background-color: lightgray;
-  display: flex;
-  flex-direction: column; 
-  margin-top:0;
-  margin-bottom:2vw;
+    background-color: white;
+    border: 1px solid var(--contrast-bg-color);
+    margin: .3rem;
+    padding: .3rem;
 }
 
-.section-titles {
-  background-color: darkgrey;
-  display: flex;
-  flex-direction: column;
-  margin-bottom:0;
+.section-title {
+    font-size: 1.8rem;
+    margin: .3rem;
+    margin-top: 0;
 }
 
-.section-title{
-  
-  font-weight: bold;
-  margin-bottom:0;
-  font-size: 3.5vw
+.section-subtitle {
+    font-size: 1rem;
+    margin: .3rem;
 }
 
-.section-subtitle{
-  font-weight: bold;
-  font-style: italic;
-  margin-top:0;
-  font-size: 2.0vw
-}
-
-.columns {  
-  margin-top:0;
-  display: flex;
-  flex-wrap: wrap;
-  background-color: darkgrey;
-}
-
-.card{
-  width: 30%;
-  margin: 0;
-  margin-left: 0.5vw;
-  background-color: transparent;
-  border-style: solid;
-  border-width: 1px;
-  min-height: 48vw;
-  max-height: 48vw;
-}
-
-.card-title{  
-  color: black;
-  font-size: 2.0vw;
-  font-weight: bold;
-  background-color: #8bb381;
-  margin:0; 
-  min-height: 10vw; 
-  max-height: 10vw; 
-}
-
-.card-image{  
-  margin:0;  
-  background-color: lightblue;  
-  font-size: 1.2vw;
-  min-height: 16vw; 
-  max-height: 16vw; 
-}
-.card-description{  
-  margin:0;  
-  background-color: white;
-  font-size: 1.8vw;
-  min-height: 22vw; 
-  max-height: 22vw; 
-}
-
-/*
- {
-  box-sizing: border-box
-}
-
-body {
-  font-family: Verdana, sans-serif;  
-  margin: 0;
-  padding: 0.5vw;
-  background-color: lightgrey;
-}
-
-.heading {
-  height: 1000px;
-  background: url('./images/00.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.heading .centered {
-  color: #fff;
-  font-size: 2.5vw;
-  text-align: center;
-  text-transform: uppercase;
-  background: rgba(0, 0, 0, 0.4);
-  padding: 0px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-*/
-
-
-/*
-.content {
-  margin: 3vw;
-}
-
-
-.title {
-  margin: 0;
+.main-section {
+   position: relative;
+    font-weight: bolder;
+    color: var(--contrast-bg-color);
 
 }
 
-.card{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+.main-section>.section-title {
+    font-size: 2.5rem;
 }
 
-.card-title{
-  background-color: #8bb381;
-  height: 5em;
+.main-section>.section-subtitle {
+    font-size: 1.3rem;
 }
 
-.card-description{  
-  background-color: white;
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--width), 1fr));
+    gap: 1rem;
+    padding: 0.3rem;
 }
 
-.subtitle {
-  margin:0;
+.card {
+    width: var(--width);
+    background-color: var(--bg-color);
+    border: 1px solid #777;
+    border-radius: .25rem;
+    overflow: hidden;
+    padding: .3rem;
 }
 
-.card-container{
-  display: flex;
+.card-shadow {
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2)
 }
 
-.card{
- width: 400px;
- margin: 1vw;
-
+.card-image {
+    padding: var(--padding);
+    padding-bottom: 0;
+    margin-bottom: .5rem;
+    padding: 0;
+    overflow: hidden;
 }
 
-.card-picture{
-  width : 400px;
-  height : 400px;
+.card-image>img {
+    display: block;
+    width: 100%;
+    max-height: var(--width);
+    aspect-ratio: "16/9";
+    object-fit: scale-down;
+    object-position: center;
+    transition: 500ms transform ease-in-out;
 }
 
-.heading img{
-  width: 100%;
-  height:auto;
-  opacity: 40%;
+.card:hover>.card-image>img {
+    transform: scale(1.075);
 }
 
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: var(--padding);
+    text-align: center;
+    background-color: var(--contrast-bg-color);
+    color: white;
+}
 
- 
- .centered {
+.card-description {
+    font-size: 1rem;
+    margin-top: 0.9rem;
+    padding: var(--padding);
+    padding-top: 0;
+}
+
+.main-section::before {
+    background-image: url('./images/00.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: 0.25;
+    content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-.main-title {
-  font-size: 1.5em;
-  line-height: 3;
-  color: black;
-  text-transform: uppercase;
-  letter-spacing: 1.67px;
-  text-align: center;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: auto;
+    height: auto;
 }
 
-.sub-title {
-  font-size: 2em;
-  line-height: 3;
-  color:black;
-  text-transform: uppercase;
-  letter-spacing: 1.67px;
-  text-align: center;
+a {
+    background: var(--main-bg-color);
+    color: white;
+    border: none;
+    font-size: 1rem;
+    padding: .2em .75em;
+    border-radius: .25em;
+    cursor: pointer;
 }
 
-.purpose{
+a:hover, a:focus {
+    background: var(--contrast-bg-color);
+}
+
+.epub-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  height: 400px;
-  margin: 2em;
 }
 
-.purpose .title{  
-  font-weight: bold;
+.epub-div>h1{
+    background: var(--main-bg-color); 
+    margin: 1.3rem;
 }
 
-.paragraph{
-  
-  font-size: 1.1em;
-  line-height: 1.5;
+.epub-div>a{
+    font-size: 1.5rem;
+    background: var(--contrast-bg-color); 
+   color: white;
 }
-
-
-.card-header-title {
-  background-color: #8bb381;
-  height: 5em;
-}
-
-.card-content {
-  height: 18em;
-}
-
-.card-footer {
-  text-align: center;
-}
-*/
