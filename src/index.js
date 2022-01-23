@@ -21,7 +21,7 @@ function createAmelander(parent) {
     amelanderDiv.classList.add("de-amelander")
     amelanderDiv.id="amelander";
     const h1= amelanderDiv.appendChild(document.createElement("h3"));
-    h1.innerHTML=`<a href="./data/amelander/sept_2021.pdf" target="_blank">Klil hier voor artikel over Vermaningspad en Het Freule Huuske</a><br><i>wij vinden het
+    h1.innerHTML=`<a href="https://drive.google.com/file/d/1Ie5GE7C-QJt-1SrWzCD-D6FsavthZiCY/view?usp=sharing" target="_blank">Klil hier voor artikel over Vermaningspad en Het Freule Huuske</a><br><i>wij vinden het
     belangrijk dat dit historische pad in Nes behouden blijft. Amelander
     Musea erkennen ook het historische belang van het Vermaningspad door
     tijdens vakanties Free Tours te organiseren. (Zie <a href="https://www.vvvameland.nl/zien-en-doen/excursies/free-tour#:~:text=Stichting%20Amelander%20Musea%20organiseert%20free%20tours%20in%20de,de%20leukste%20introductie%20tot%20de%20cultuurhistorie%20van%20Ameland" target="_blank">Free Tour</a>) Deze vrijblijvende
@@ -42,10 +42,8 @@ function createAmelander(parent) {
     const toTop = amelanderDiv.appendChild(document.createElement("a"))
     toTop.innerText = "Naar top"
     toTop.href="#home"
-/*
-    const h1 = amelanderDiv.appendChild(document.createElement("h1"))
-    h1.innerText = "De Amelander over het Vermaningspad (september 2021)"
-    epub(amelanderDiv, 'amelander', 2, "jpg");*/
+
+ 
 }
 
 fetch("./data/freulehuuske.json")

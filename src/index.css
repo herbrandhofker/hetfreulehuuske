@@ -4,36 +4,44 @@
     --main-bg-color: #caa009;
     --bg-color: #f3edd1;
     --contrast-bg-color: #870d4d;
-    --width: 400px;
+    --card-width: 300px;
     font-size: calc(0.75em + 1vmin);
     font-family: 'Open Sans', sans-serif;
 }
 
+@media screen and (min-width: 680px) {
+    :root {
+        --card-width: 400px;
+    }
+}
+
 .button-container {
-    margin: .3rem;
-    padding: .3rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    margin: .1rem;
+    padding: .2rem;
     display: flex;
     justify-content: space-between;
     background-color: var(--bg-color);
 }
 
 .button-container>a {
-    font-size: 1.5rem;
+    width: 40%;
+    font-size: 1rem;
     background-color: var(--contrast-bg-color);
     color: white;
 }
 
 .section {
+    display: flex; /*added*/
+    flex-direction: column; /*added*/
     background-color: white;
-    border: 1px solid var(--contrast-bg-color);
+    border: 0.5vw solid var(--contrast-bg-color);
     margin: .3rem;
-    padding: .3rem;
+    padding: .2rem;
+    overflow:scroll;
 }
 
 .section-title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin: .3rem;
     margin-top: 0;
 }
@@ -47,7 +55,6 @@
     position: relative;
     font-weight: bolder;
     color: var(--contrast-bg-color);
-
 }
 
 .main-section>.section-title {
@@ -60,13 +67,13 @@
 
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(var(--width), 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
+    /* gap: 0.4rem;*/
     padding: 0.3rem;
 }
 
 .card {
-    width: var(--width);
+    width: var(--card-width);
     background-color: var(--bg-color);
     border: 1px solid #777;
     border-radius: .25rem;
@@ -90,7 +97,6 @@
 .card-image>img {
     display: block;
     width: 100%;
-    max-height: var(--width);
     aspect-ratio: "16/9";
     object-fit: scale-down;
     object-position: center;
@@ -165,9 +171,9 @@ a:hover, a:focus {
     color: white;
 }
 
-.de-amelander {    
-  display: flex;
-  flex-direction: column;
-  background-color: red;
+.de-amelander {
+    display: flex;
+    flex-direction: column;
+    background-color: red;
 
 }
