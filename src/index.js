@@ -21,13 +21,14 @@ function createAmelander(parent) {
     amelanderDiv.classList.add("de-amelander")
     amelanderDiv.id="amelander";
     const h1= amelanderDiv.appendChild(document.createElement("h3"));
-    h1.innerHTML=`<a href="https://drive.google.com/file/d/1Ie5GE7C-QJt-1SrWzCD-D6FsavthZiCY/view?usp=sharing" target="_blank">Klil hier voor artikel over Vermaningspad en Het Freule Huuske</a><br><i>wij vinden het
+    h1.innerHTML=`<a href="https://drive.google.com/file/d/1Ie5GE7C-QJt-1SrWzCD-D6FsavthZiCY/view?usp=sharing" target="_blank">Klil hier voor artikel over Vermaningspad en Het Freule Huuske</a><br>
+    Boodschap van Jacob Roep en Afke Schols van 'Amelander Musea': <br><i>wij vinden het
     belangrijk dat dit historische pad in Nes behouden blijft. Amelander
     Musea erkennen ook het historische belang van het Vermaningspad door
     tijdens vakanties Free Tours te organiseren. (Zie <a href="https://www.vvvameland.nl/zien-en-doen/excursies/free-tour#:~:text=Stichting%20Amelander%20Musea%20organiseert%20free%20tours%20in%20de,de%20leukste%20introductie%20tot%20de%20cultuurhistorie%20van%20Ameland" target="_blank">Free Tour</a>) Deze vrijblijvende
     rondleidingen leiden u langs de bijzondere geschiedenis van het
     Vermaningspad en gaan over de bestuurlijke en religieuze geschiedenis
-    van Ameland en de walvisvaart.</i><br>(Boodschap van Jacob Roep en Afke Schols van 'Amelander Musea')`;
+    van Ameland en de walvisvaart.</i>`;
      const deAmelander = amelanderDiv.appendChild(document.createElement("a"))
     deAmelander.innerText="Maandblad 'de Amelander', (bijna) overal op Ameland te koop"
     deAmelander.href="https://www.deamelander.nl/"

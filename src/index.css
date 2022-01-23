@@ -173,6 +173,7 @@ a:hover, a:focus {
 
 .de-amelander {
     display: flex;
+    margin : 1rem;
     flex-direction: column;
     background-color: var(--bg-color);
 
