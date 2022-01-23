@@ -67,7 +67,7 @@ function doit(parent, data) {
     dagboekButton.innerText="Naar dagboek Willem Hofker";
     const amelanderButton= buttonContainer.appendChild(document.createElement("a"));
     amelanderButton.href="#amelander"
-    amelanderButton.innerText="Naar Amelander Musea in 'De Amelander' over het Freule Huuske";
+    amelanderButton.innerText="Naar Amelander Musea over het Freule Huuske";
     for (let i = 0; i < data.sections.length; i++) {
         const section = data.sections[i];
         const sectionDiv = parent.appendChild(document.createElement("div"));
