@@ -5,7 +5,7 @@
     --bg-color: #f3edd1;
     --contrast-bg-color: #870d4d;
     --width: 400px;
-    font-size: 1vw;
+    font-size: calc(0.75em + 1vmin);
     font-family: 'Open Sans', sans-serif;
 }
 
