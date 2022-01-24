@@ -1,18 +1,16 @@
-
 import './index.css'
 import epub from './epub.js'
 
-
-
+const debug = false;
 fetch("./data/freulehuuske.json")
     .then(response => {
         return response.json();
     })
     .then(data => {
         const body = document.body;
-        createLinks(body)
+        if (!debug) createLinks(body)
         doit(body, data);
-        createBijlagen(body, data)
+        if (!debug) createBijlagen(body, data)
     });
 
 function doit(parent, data) {
@@ -25,10 +23,13 @@ function doit(parent, data) {
         }
         const h1 = sectionDiv.appendChild(document.createElement("h1"));
         h1.classList.add("section-title")
-        h1.innerHTML = section.title;
+        if (debug) h1.innerText = "title"
+        else
+            h1.innerHTML = section.title;
         if (section.subtitle != null) {
             const h2 = sectionDiv.appendChild(document.createElement("h2"));
-            h2.innerHTML = section.subtitle;
+            if (debug) h2.innerHTML = "subtitle";
+            else h2.innerHTML = section.subtitle;
             h2.classList.add("section-subtitle")
         }
 
@@ -43,28 +44,27 @@ function doit(parent, data) {
                 cardImage.classList.add("card-image");
                 if (cardData.picture != null) {
                     const img = cardImage.appendChild(document.createElement("img"));
-                    img.src = "./images/" + cardData.picture
+               //     img.src = "./images/" + cardData.picture
                     img.loading = "lazy"
                 }
-
                 if (cardData.title != null) {
                     const cardTitle = card.appendChild(document.createElement("div"));
                     cardTitle.classList.add("card-title");
-                    cardTitle.innerHTML = cardData.title
+                    if (debug) cardTitle.innerText = "title"
+                    else cardTitle.innerHTML = cardData.title
                 }
                 if (cardData.description != null) {
                     const cardFooter = card.appendChild(document.createElement("div"));
                     cardFooter.classList.add("card-description");
-                    cardFooter.innerHTML = cardData.description
+                    if(debug) cardFooter.innerText="description"
+                    else cardFooter.innerHTML = cardData.description
                 }
             }
         }
     }
 }
 
-
 function createBijlagen(parent, data) {
-
     createDagboek(parent, data);
     parent.appendChild(document.createElement("hr"))
     createAmelander(parent, data);
