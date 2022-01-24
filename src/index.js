@@ -25,8 +25,7 @@ function createDagboek(parent) {
 
 function createAmelander(parent) {
     const amelanderDiv = createExtra(parent, "amelander")
-    //  amelanderDiv.appendChild(document.createElement("br"));
-
+  
     const div = amelanderDiv.appendChild(document.createElement("div"));
     div.classList.add("de-amelander", "extra-items")
     const a = div.appendChild(document.createElement("a"));
