@@ -2,14 +2,73 @@
 import './index.css'
 import epub from './epub.js'
 
-const body = document.body;
+
+
+fetch("./data/freulehuuske.json")
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        const body = document.body;
+        createLinks(body)
+        doit(body, data);
+        createBijlagen(body, data)
+    });
+
+function doit(parent, data) {
+    for (let i = 0; i < data.sections.length; i++) {
+        const section = data.sections[i];
+        const sectionDiv = parent.appendChild(document.createElement("div"));
+        sectionDiv.classList.add("section")
+        if (i == 0) {
+            sectionDiv.classList.add("main-section")
+        }
+        const h1 = sectionDiv.appendChild(document.createElement("h1"));
+        h1.classList.add("section-title")
+        h1.innerHTML = section.title;
+        if (section.subtitle != null) {
+            const h2 = sectionDiv.appendChild(document.createElement("h2"));
+            h2.innerHTML = section.subtitle;
+            h2.classList.add("section-subtitle")
+        }
+
+        if (section.cards.length > 0) {
+            const grid = sectionDiv.appendChild(document.createElement("div"));
+            grid.classList.add("card-grid")
+            for (let j = 0; j < section.cards.length; j++) {
+                const cardData = section.cards[j]
+                const card = grid.appendChild(document.createElement("div"));
+                card.classList.add("card", "card-shadow");
+                const cardImage = card.appendChild(document.createElement("div"));
+                cardImage.classList.add("card-image");
+                if (cardData.picture != null) {
+                    const img = cardImage.appendChild(document.createElement("img"));
+                    img.src = "./images/" + cardData.picture
+                    img.loading = "lazy"
+                }
+
+                if (cardData.title != null) {
+                    const cardTitle = card.appendChild(document.createElement("div"));
+                    cardTitle.classList.add("card-title");
+                    cardTitle.innerHTML = cardData.title
+                }
+                if (cardData.description != null) {
+                    const cardFooter = card.appendChild(document.createElement("div"));
+                    cardFooter.classList.add("card-description");
+                    cardFooter.innerHTML = cardData.description
+                }
+            }
+        }
+    }
+}
+
 
 function createBijlagen(parent, data) {
 
     createDagboek(parent, data);
     parent.appendChild(document.createElement("hr"))
     createAmelander(parent, data);
-    
+
     function createExtra(parent, id) {
         const div = parent.appendChild(document.createElement("div"))
         div.classList.add("extra")
@@ -62,20 +121,10 @@ function createBijlagen(parent, data) {
         yt.target = "_blank"
     }
 
-  
+
 }
 
-
-fetch("./data/freulehuuske.json")
-    .then(response => {
-        return response.json();
-    })
-    .then(data => {
-        doit(body, data);
-        createBijlagen(body, data)
-    });
-
-function doit(parent, data) {
+function createLinks(parent) {
     const buttonContainer = parent.appendChild(document.createElement("div"));
     buttonContainer.classList.add("button-container")
     buttonContainer.id = "home"
@@ -85,48 +134,4 @@ function doit(parent, data) {
     const amelanderButton = buttonContainer.appendChild(document.createElement("a"));
     amelanderButton.href = "#amelander"
     amelanderButton.innerText = "Naar Amelander Musea over het Freule Huuske";
-    for (let i = 0; i < data.sections.length; i++) {
-        const section = data.sections[i];
-        const sectionDiv = parent.appendChild(document.createElement("div"));
-        sectionDiv.classList.add("section")
-        if (i == 0) {
-            sectionDiv.classList.add("main-section")
-        }
-        const h1 = sectionDiv.appendChild(document.createElement("h1"));
-        h1.classList.add("section-title")
-        h1.innerHTML = section.title;
-        if (section.subtitle != null) {
-            const h2 = sectionDiv.appendChild(document.createElement("h2"));
-            h2.innerHTML = section.subtitle;
-            h2.classList.add("section-subtitle")
-        }
-
-        if (section.cards.length > 0) {
-            const grid = sectionDiv.appendChild(document.createElement("div"));
-            grid.classList.add("card-grid")
-            for (let j = 0; j < section.cards.length; j++) {
-                const cardData = section.cards[j]
-                const card = grid.appendChild(document.createElement("div"));
-                card.classList.add("card", "card-shadow");
-                const cardImage = card.appendChild(document.createElement("div"));
-                cardImage.classList.add("card-image");
-                if (cardData.picture != null) {
-                    const img = cardImage.appendChild(document.createElement("img"));
-                    img.src = "./images/" + cardData.picture
-                    img.loading = "lazy"
-                }
-
-                if (cardData.title != null) {
-                    const cardTitle = card.appendChild(document.createElement("div"));
-                    cardTitle.classList.add("card-title");
-                    cardTitle.innerHTML = cardData.title
-                }
-                if (cardData.description != null) {
-                    const cardFooter = card.appendChild(document.createElement("div"));
-                    cardFooter.classList.add("card-description");
-                    cardFooter.innerHTML = cardData.description
-                }
-            }
-        }
-    }
 }
