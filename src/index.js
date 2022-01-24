@@ -131,7 +131,7 @@ function createLinks(parent) {
     buttonContainer.id = "home"
     const dagboekButton = buttonContainer.appendChild(document.createElement("a"));
     dagboekButton.href = "#dagboek"
-    dagboekButton.innerText = "Naar dagboek Willem Hofker";
+    dagboekButton.innerText = "Naar dagboek Willem Hofker over restauratie";
     const amelanderButton = buttonContainer.appendChild(document.createElement("a"));
     amelanderButton.href = "#amelander"
     amelanderButton.innerText = "Naar Amelander Musea over het Freule Huuske";
