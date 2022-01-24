@@ -162,6 +162,7 @@ a:hover, a:focus {
 
 .de-amelander{
     margin-top: 1vw;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;

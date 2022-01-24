@@ -121,8 +121,6 @@ function createBijlagen(parent, data) {
         yt.href = "https://www.youtube.com/watch?v=0Sc-1cLTR7A&ab_channel=AmelandVandaag"
         yt.target = "_blank"
     }
-
-
 }
 
 function createLinks(parent) {
