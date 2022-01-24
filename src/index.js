@@ -40,19 +40,20 @@ function doit(parent, data) {
                 const cardData = section.cards[j]
                 const card = grid.appendChild(document.createElement("div"));
                 card.classList.add("card", "card-shadow");
-                const cardImage = card.appendChild(document.createElement("div"));
-                cardImage.classList.add("card-image");
-                if (cardData.picture != null) {
-                    const img = cardImage.appendChild(document.createElement("img"));
-               //     img.src = "./images/" + cardData.picture
-                    img.loading = "lazy"
-                }
                 if (cardData.title != null) {
                     const cardTitle = card.appendChild(document.createElement("div"));
                     cardTitle.classList.add("card-title");
                     if (debug) cardTitle.innerText = "title"
                     else cardTitle.innerHTML = cardData.title
                 }
+                 if (cardData.picture != null) {
+                    const cardImage = card.appendChild(document.createElement("div"));
+                    cardImage.classList.add("card-image");
+                     const img = cardImage.appendChild(document.createElement("img"));
+                    img.src = "./images/" + cardData.picture
+                    img.loading = "lazy"
+                }
+              
                 if (cardData.description != null) {
                     const cardFooter = card.appendChild(document.createElement("div"));
                     cardFooter.classList.add("card-description");
