@@ -120,7 +120,7 @@
 }
 
 .main-section::before {
-    background-image: url('./images/00.jpg');
+    background-image: url('./data/website/00.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;

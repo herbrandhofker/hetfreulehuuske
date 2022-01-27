@@ -13,12 +13,11 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Het Freule Huuske',
-      favicon: './src/images/00.jpg',
+      favicon: './src/data/website/00.jpg',
       meta: { viewport: 'width=device-width, initial-scale=1', charset:"UTF-8" }
     }),
     new CopyPlugin({
       patterns: [
-        { from: './src/images', to: './images' },
         { from: './src/data', to: './data' },
       ],
     })

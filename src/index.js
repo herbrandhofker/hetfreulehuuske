@@ -50,7 +50,7 @@ function doit(parent, data) {
                     const cardImage = card.appendChild(document.createElement("div"));
                     cardImage.classList.add("card-image");
                      const img = cardImage.appendChild(document.createElement("img"));
-                    img.src = "./images/" + cardData.picture
+                    img.src = "./data/website/" + cardData.picture
                     img.loading = "lazy"
                 }
               
