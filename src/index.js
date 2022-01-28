@@ -11,6 +11,7 @@ fetch("./data/freulehuuske.json")
         if (!debug) createLinks(body)
         doit(body, data);
         if (!debug) createBijlagen(body, data)
+        createContact(body);
     });
 
 function doit(parent, data) {
@@ -133,4 +134,18 @@ function createLinks(parent) {
     const amelanderButton = buttonContainer.appendChild(document.createElement("a"));
     amelanderButton.href = "#amelander"
     amelanderButton.innerText = "Naar Amelander Musea over het Freule Huuske";
+    const contactButton = buttonContainer.appendChild(document.createElement("a"));
+    contactButton.href = "#contact"
+    contactButton.innerText = "Contact";
 }
+
+function createContact(parent){
+    const footer= parent.appendChild(document.createElement("footer"))
+    footer.id="contact";
+    const strong= footer.appendChild(document.createElement("strong"))
+     strong.innerHTML="Stichting Het Freule Huuske";
+     const div= footer.appendChild(document.createElement("div"))
+     div.innerHTML="Vermaningspad 6, Nes, Ameland<br>Email: hetfreulehuuske@gmail.com <br>Tel: 06-41850977"
+  
+}
+

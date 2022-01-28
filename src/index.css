@@ -26,7 +26,8 @@
 }
 
 .button-container>a {
-    width: 40%;
+    margin: .2rem;
+    width: 30%;
     font-size: 1rem;
     background-color: var(--contrast-bg-color);
     color: white;
@@ -189,5 +190,9 @@ a:hover, a:focus {
     color: white;
 }
 
-
-
+#contact{
+    background: var(--contrast-bg-color);
+    color: white;
+    margin: .3rem;
+    padding: .3rem;
+}
