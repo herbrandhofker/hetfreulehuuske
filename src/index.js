@@ -57,7 +57,7 @@ function doit(parent, data) {
                     img.loading = "lazy"
                     if (cardData.href!=null)
                         img.addEventListener("click", ()=>{ 
-                              window.location.href="https://hendrikspaan.github.io/haagseschool/" 
+                              window.location.href=cardData.href
                   })
                 
                     
