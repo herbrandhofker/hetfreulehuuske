@@ -171,6 +171,17 @@
                 }
               
             ]
+        },
+        {
+            "title": "Ook in bezit, de Haagsche School collectie van (over)grootvader Hendrik Spaan",
+           "cards": [
+                {
+                    "picture": "28.jpg",
+                    "title": "Ook in bezit, de collectie van de Haagsche School",
+                    "href": "https://hendrikspaan.github.io/haagseschool"
+                }
+              
+            ]
         }
     ]
 }

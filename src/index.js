@@ -8,7 +8,7 @@ fetch("./data/freulehuuske.json")
     })
     .then(data => {
         const body = document.body;
-        if (!debug) createLinks(body)
+       if (!debug) createLinks(body)
         doit(body, data);
         if (!debug) createBijlagen(body, data)
         createContact(body);
@@ -46,13 +46,21 @@ function doit(parent, data) {
                     cardTitle.classList.add("card-title");
                     if (debug) cardTitle.innerText = "title"
                     else cardTitle.innerHTML = cardData.title
+                   
                 }
+                
                  if (cardData.picture != null) {
                     const cardImage = card.appendChild(document.createElement("div"));
                     cardImage.classList.add("card-image");
                      const img = cardImage.appendChild(document.createElement("img"));
                     img.src = "./data/website/" + cardData.picture
                     img.loading = "lazy"
+                    if (cardData.href!=null)
+                        img.addEventListener("click", ()=>{ 
+                              window.location.href="https://hendrikspaan.github.io/haagseschool/" 
+                  })
+                
+                    
                 }
               
                 if (cardData.description != null) {
