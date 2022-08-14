@@ -14,6 +14,67 @@ fetch("./data/freulehuuske.json")
         createContact(body);
     });
 
+
+
+function createBijlagen(parent, data) {
+    createDagboek(parent, data);
+    parent.appendChild(document.createElement("hr"))
+    createAmelander(parent, data);
+
+    function createExtra(parent, id) {
+        const div = parent.appendChild(document.createElement("div"))
+        div.classList.add("extra")
+        div.id = id
+        const a = div.appendChild(document.createElement("a"))
+        a.innerText = "Terug naar top"
+        a.href = "#home"
+        return div;
+    }
+    function createDagboek(parent) {
+        const dagboekDiv = createExtra(parent, "dagboek")
+        dagboekDiv.classList.add("epub-div")
+
+        const h1 = dagboekDiv.appendChild(document.createElement("h1"))
+        h1.classList.add("extra-items")
+        h1.innerText = "Dagboek van Willem Hofker over de restauratie (1982-1992)"
+        epub(dagboekDiv, 'dagboek', 80, "jpg");
+    }
+
+    function createAmelander(parent) {
+        const amelanderDiv = createExtra(parent, "amelander")
+
+        const div = amelanderDiv.appendChild(document.createElement("div"));
+        div.classList.add("de-amelander", "extra-items")
+        const a = div.appendChild(document.createElement("a"));
+        a.href = "https://drive.google.com/file/d/1Ie5GE7C-QJt-1SrWzCD-D6FsavthZiCY/view?usp=sharing"
+        a.target = "_blank";
+        a.innerText = "Klik hier voor artikel over Vermaningspad en Het Freule Huuske"
+
+        const h1 = div.appendChild(document.createElement("h3"));
+        h1.innerHTML = `<b style="font-size:2vw">Boodschap van Jacob Roep en Afke Schols van de 'Amelander Musea': </b><br><i>wij vinden het
+    belangrijk dat dit historische pad in Nes behouden blijft. Amelander
+    Musea erkennen ook het historische belang van het Vermaningspad door
+    tijdens vakanties Free Tours te organiseren. (Zie <a href="https://www.vvvameland.nl/zien-en-doen/excursies/free-tour#:~:text=Stichting%20Amelander%20Musea%20organiseert%20free%20tours%20in%20de,de%20leukste%20introductie%20tot%20de%20cultuurhistorie%20van%20Ameland" target="_blank">Free Tour</a>) Deze vrijblijvende
+    rondleidingen leiden u langs de bijzondere geschiedenis van het
+    Vermaningspad en gaan over de bestuurlijke en religieuze geschiedenis
+    van Ameland en de walvisvaart.</i>`;
+        const deAmelander = amelanderDiv.appendChild(document.createElement("a"))
+        deAmelander.classList.add("extra-items");
+
+        deAmelander.innerText = "Maandblad 'de Amelander', (bijna) overal op Ameland te koop"
+        deAmelander.href = "https://www.deamelander.nl/"
+        deAmelander.target = "_blank"
+
+        const yt = amelanderDiv.appendChild(document.createElement("a"))
+        yt.classList.add("extra-items")
+
+        yt.innerText = "Freetour met bezoek Freule Huuske"
+        yt.href = "https://www.youtube.com/watch?v=0Sc-1cLTR7A&ab_channel=AmelandVandaag"
+        yt.target = "_blank"
+    }
+}
+
+
 function doit(parent, data) {
     for (let i = 0; i < data.sections.length; i++) {
         const section = data.sections[i];
@@ -71,64 +132,6 @@ function doit(parent, data) {
                 }
             }
         }
-    }
-}
-
-function createBijlagen(parent, data) {
-    createDagboek(parent, data);
-    parent.appendChild(document.createElement("hr"))
-    createAmelander(parent, data);
-
-    function createExtra(parent, id) {
-        const div = parent.appendChild(document.createElement("div"))
-        div.classList.add("extra")
-        div.id = id
-        const a = div.appendChild(document.createElement("a"))
-        a.innerText = "Terug naar top"
-        a.href = "#home"
-        return div;
-    }
-    function createDagboek(parent) {
-        const dagboekDiv = createExtra(parent, "dagboek")
-        dagboekDiv.classList.add("epub-div")
-
-        const h1 = dagboekDiv.appendChild(document.createElement("h1"))
-        h1.classList.add("extra-items")
-        h1.innerText = "Dagboek van Willem Hofker over de restauratie (1982-1992)"
-        epub(dagboekDiv, 'dagboek', 80, "jpg");
-    }
-
-    function createAmelander(parent) {
-        const amelanderDiv = createExtra(parent, "amelander")
-
-        const div = amelanderDiv.appendChild(document.createElement("div"));
-        div.classList.add("de-amelander", "extra-items")
-        const a = div.appendChild(document.createElement("a"));
-        a.href = "https://drive.google.com/file/d/1Ie5GE7C-QJt-1SrWzCD-D6FsavthZiCY/view?usp=sharing"
-        a.target = "_blank";
-        a.innerText = "Klik hier voor artikel over Vermaningspad en Het Freule Huuske"
-
-        const h1 = div.appendChild(document.createElement("h3"));
-        h1.innerHTML = `<b style="font-size:2vw">Boodschap van Jacob Roep en Afke Schols van de 'Amelander Musea': </b><br><i>wij vinden het
-    belangrijk dat dit historische pad in Nes behouden blijft. Amelander
-    Musea erkennen ook het historische belang van het Vermaningspad door
-    tijdens vakanties Free Tours te organiseren. (Zie <a href="https://www.vvvameland.nl/zien-en-doen/excursies/free-tour#:~:text=Stichting%20Amelander%20Musea%20organiseert%20free%20tours%20in%20de,de%20leukste%20introductie%20tot%20de%20cultuurhistorie%20van%20Ameland" target="_blank">Free Tour</a>) Deze vrijblijvende
-    rondleidingen leiden u langs de bijzondere geschiedenis van het
-    Vermaningspad en gaan over de bestuurlijke en religieuze geschiedenis
-    van Ameland en de walvisvaart.</i>`;
-        const deAmelander = amelanderDiv.appendChild(document.createElement("a"))
-        deAmelander.classList.add("extra-items");
-
-        deAmelander.innerText = "Maandblad 'de Amelander', (bijna) overal op Ameland te koop"
-        deAmelander.href = "https://www.deamelander.nl/"
-        deAmelander.target = "_blank"
-
-        const yt = amelanderDiv.appendChild(document.createElement("a"))
-        yt.classList.add("extra-items")
-
-        yt.innerText = "Freetour met bezoek Freule Huuske"
-        yt.href = "https://www.youtube.com/watch?v=0Sc-1cLTR7A&ab_channel=AmelandVandaag"
-        yt.target = "_blank"
     }
 }
 
